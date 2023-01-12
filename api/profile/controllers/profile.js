@@ -16,9 +16,9 @@
         return ctx.request(null, [{messages: [{id: "No authorization header found!"}] }]);
      }
      if (ctx.is('multipart')) {
-       const { data, files } = parseMultipartData(ctx);
-       data[user] = user;
-       entity = await strapi.services.profile.create(data, { files });
+        const { data, files } = parseMultipartData(ctx);
+        data[user] = user;
+        entity = await strapi.services.profile.create(data, { files });
      } else {
         const data = ctx.request.body;
         data[user] = user;
